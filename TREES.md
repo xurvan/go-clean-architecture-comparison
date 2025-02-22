@@ -1,41 +1,40 @@
 ## Clean architecture sample repositories trees
 
-### [bxcodec/go-clean-arch](https://github.com/bxcodec/go-clean-arch) ![GitHub Repo stars](https://img.shields.io/github/stars/bxcodec/go-clean-arch?style=flat)
+### [bxcodec/go-clean-arch](https://github.com/bxcodec/go-clean-arch/tree/v3) ![GitHub Repo stars](https://img.shields.io/github/stars/bxcodec/go-clean-arch?style=flat)
 
 ```
 .
 ├── app
 │   └── main.go
 ├── article
+│   ├── delivery
+│   │   └── http
+│   │       ├── middleware
+│   │       │   ├── middleware.go
+│   │       │   └── middleware_test.go
+│   │       ├── article_handler.go
+│   │       └── article_test.go
+│   ├── repository
+│   │   ├── mysql
+│   │   │   ├── mysql_article.go
+│   │   │   └── mysqlarticle_test.go
+│   │   └── helper.go
+│   └── usecase
+│       ├── article_ucase.go
+│       └── article_ucase_test.go
+├── author
+│   └── repository
+│       └── mysql
+│           ├── mysql_repository.go
+│           └── mysql_test.go
+├── domain
 │   ├── mocks
 │   │   ├── ArticleRepository.go
+│   │   ├── ArticleUsecase.go
 │   │   └── AuthorRepository.go
-│   ├── service.go
-│   └── service_test.go
-├── domain
 │   ├── article.go
 │   ├── author.go
 │   └── errors.go
-├── internal
-│   ├── repository
-│   │   ├── mysql
-│   │   │   ├── article.go
-│   │   │   ├── article_test.go
-│   │   │   ├── author.go
-│   │   │   └── author_test.go
-│   │   └── helper.go
-│   ├── rest
-│   │   ├── middleware
-│   │   │   ├── cors.go
-│   │   │   ├── cors_test.go
-│   │   │   └── timeout.go
-│   │   ├── mocks
-│   │   │   └── ArticleService.go
-│   │   ├── article.go
-│   │   └── article_test.go
-│   ├── workers
-│   │   └── README.md
-│   └── README.md
 ├── misc
 │   └── make
 │       ├── help.Makefile
@@ -43,8 +42,8 @@
 ├── article.sql
 ├── clean-arch.png
 ├── compose.yaml
+├── config.json
 ├── Dockerfile
-├── example.env
 ├── go.mod
 ├── go.sum
 ├── LICENSE
