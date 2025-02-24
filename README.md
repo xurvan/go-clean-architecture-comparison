@@ -15,7 +15,7 @@
 │    │       └── [ENTITY]_mysql.go
 │    └── usecase                        # Bussinse logic
 │        └── [ENTITY]_usecase.go
-└── domain                              # Enteties with repository and usecase interfaces
+└── domain                              # Enteties and interfaces
      ├── [ENTITY].go
      └── errors.go
 ```
@@ -40,7 +40,7 @@
      │       ├── error.go
      │       ├── router.go
      │       └── [ENTITY].go            # REST handlers implementation
-     ├── entity
+     ├── entity                         # Enteties without interfaces
      │   └── [ENTITY].go
      └── usecase
          ├── repo                       # Infrastracture / Repository
@@ -70,7 +70,7 @@
          │   │   ├── search_[ENTITY].go
          │   │   └── types.go
          │   └── app.go
-         ├── domain
+         ├── domain                                 # Enteties and interfaces
          │   ├── [ENTITY].go
          │   └── repository.go                      # Repository interfaces
          ├── ports                                  # Interface adapters with framework
