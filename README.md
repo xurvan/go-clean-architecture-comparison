@@ -4,13 +4,13 @@
 
 ```
 .
-├── app                                 # Entry points and orchestration
+├── app                                 # Entry points, configurations and orchestration
 │    └── main.go
 ├── [BOUNDED CONTEXT]
-│    ├── delivery                       # Interface adapters
+│    ├── delivery                       # Interface adapters with framework
 │    │   └── http
 │    │       └── [ENTITY]_handler.go    # REST handlers implementation
-│    ├── repository                     # Persistence Layer
+│    ├── repository                     # Infrastracture / Repository
 │    │   └── mysql
 │    │       └── [ENTITY]_mysql.go
 │    └── usecase                        # Bussinse logic
@@ -27,12 +27,12 @@
 ├── cmd                                 # Entry points
 │    └── app
 │        └── main.go
-├── config                              # Represents external input into the system
+├── config                              # Configurations
 │    └── config.go
 └── internal
      ├── app                            # Orchestration
      │   └── app.go
-     ├── controller                     # Interface adapters
+     ├── controller                     # Interface adapters with framework
      │   ├── amqp_rpc
      │   │   ├── router.go
      │   │   └── [ENTITY].go
@@ -43,9 +43,9 @@
      ├── entity
      │   └── [ENTITY].go
      └── usecase
-         ├── repo                       # Persistence Layer
+         ├── repo                       # Infrastracture / Repository
          │   └── [ENTITY]_postgres.go
-         ├── webapi                     # Persistence Layer
+         ├── webapi                     # Infrastracture / External interface
          │   └── [ENTITY]_google.go
          ├── interfaces.go              # Repository and usecase interfaces
          └── [ENTITY].go                # Bussinse logic
@@ -57,11 +57,11 @@
 .
 └── internal
      └── [BOUNDED CONTEXT]
-         ├── adapters                               # Persistence Layer
+         ├── adapters                               # Infrastracture / Repository
          │   ├── [ENTITY]_firestore_repository.go
          │   ├── [ENTITY]_memory_repository.go
-         │   ├── [ENTITY]_mysql_repository.go
-         ├── app                                    # Bussinse logic
+         │   └── [ENTITY]_mysql_repository.go
+         ├── app                                    # Bussinse logic with CQS
          │   ├── command
          │   │   ├── do_[ENTITY].go
          │   │   ├── action_on_[ENTITY].go
@@ -73,10 +73,10 @@
          ├── domain
          │   ├── [ENTITY].go
          │   └── repository.go                      # Repository interfaces
-         ├── ports                                  # Interface adapters
+         ├── ports                                  # Interface adapters with framework
          │   ├── grpc.go
          │   └── http.go                            # REST handlers implementation
-         ├── service                                # Orchestration
+         ├── service                                # Orchestration and configurations
          │   └── application.go
-         └── main.go                                # Entry points
+         └── main.go                                # Entry point
 ```
