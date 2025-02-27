@@ -1022,46 +1022,6 @@
 └── README.md
 ```
 
-### [percybolmer/ddd-go](https://github.com/percybolmer/ddd-go/tree/clean-architecture) ![GitHub Repo stars](https://img.shields.io/github/stars/percybolmer/ddd-go?style=flat)
-
-```
-.
-├── cmd
-│   └── main.go
-├── domain
-│   ├── banking
-│   │   └── readme.MD
-│   ├── customer
-│   │   ├── memory
-│   │   │   ├── memory.go
-│   │   │   └── memory_test.go
-│   │   ├── mongo
-│   │   │   └── mongo.go
-│   │   ├── customer.go
-│   │   ├── customer_test.go
-│   │   └── repository.go
-│   └── product
-│       ├── memory
-│       │   ├── memory.go
-│       │   └── memory_test.go
-│       ├── product.go
-│       ├── product_test.go
-│       └── repository.go
-├── services
-│   ├── order
-│   │   ├── order.go
-│   │   └── order_test.go
-│   └── tavern
-│       ├── tavern.go
-│       └── tavern_test.go
-├── go.mod
-├── go.sum
-├── item.go
-├── person.go
-├── readme.MD
-└── transaction.go
-```
-
 ### [jfeng45/servicetmpl](https://github.com/jfeng45/servicetmpl) ![GitHub Repo stars](https://img.shields.io/github/stars/jfeng45/servicetmpl?style=flat)
 
 ```
