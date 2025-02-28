@@ -63,11 +63,9 @@
          │   └── [ENTITY]_mysql_repository.go
          ├── app                                    # Bussinse logic with CQS
          │   ├── command
-         │   │   ├── do_[ENTITY].go
-         │   │   ├── action_on_[ENTITY].go
+         │   │   ├── [COMMAND]_[ENTITY].go
          │   ├── query
-         │   │   ├── select_[ENTITY].go
-         │   │   ├── search_[ENTITY].go
+         │   │   ├── [QUERY]_[ENTITY].go
          │   │   └── types.go
          │   └── app.go
          ├── domain                                 # Entities and interfaces
@@ -79,4 +77,114 @@
          ├── service                                # Orchestration and configurations
          │   └── application.go
          └── main.go                                # Entry point
+```
+
+### [amitshekhariitbhu/go-backend-clean-architecture](https://github.com/amitshekhariitbhu/go-backend-clean-architecture) ![GitHub Repo stars](https://img.shields.io/github/stars/amitshekhariitbhu/go-backend-clean-architecture?style=flat)
+
+```
+.
+├── api                             # Interface adapter with framework
+│    ├── controller
+│    │   └── [ENTITY]_controller.go
+│    │   └── [ACTION]_controller.go
+│    └── route
+│        └── [ENTITY]_route.go
+│        └── [ACTION]_route.go
+├── bootstrap                       # Orchestration and configurations
+│    └── app.go
+├── cmd                             # Entry points
+│    └── main.go
+├── domain                          # Entities and interfaces
+│    ├── [ENTITY].go
+│    └── [ACTION].go
+├── repository                      # Infrastracture / Repository
+│    └── [ENTITY]_repository.go
+└── usecase                         # Bussinse logic
+     ├── [ENTITY]_usecase.go
+     └── [ACTION]_usecase.go
+```
+
+### [8treenet/freedom](https://github.com/8treenet/freedom) ![GitHub Repo stars](https://img.shields.io/github/stars/8treenet/freedom?style=flat)
+
+```
+.
+└── [BOUNDED CONTEXT]
+     ├── adapter
+     │   ├── consumer
+     │   │   └── consumer.go
+     │   ├── controller                         
+     │   │   └── [ENTITY].go
+     │   └── repository                         # Infrastracture / Repository
+     │       └── [ENTITY].go
+     ├── domain                                 # Entities with more DDD concepts and interfaces
+     │   ├── aggregate
+     │   │   ├── [ENTITY]_[AGGREGATE].go
+     │   ├── dependency
+     │   │   └── dependency.go
+     │   ├── entity
+     │   │   └── [ENTITY].go
+     │   ├── event
+     │   │   └── [ENTITY]_[EVENT].go
+     │   └── [SERVICE].go
+     └── server
+         ├── conf                               # Configurations
+         │   └── config.go
+         └── main.go                            # Entry point and orchestration
+```
+
+### [eminetto/clean-architecture-go-v2](https://github.com/eminetto/clean-architecture-go-v2) ![GitHub Repo stars](https://img.shields.io/github/stars/eminetto/clean-architecture-go-v2?style=flat)
+
+```
+.
+├── api
+│    ├── handler
+│    │   └── [ENTITY].go
+│    ├── presenter
+│    │   └── [ENTITY].go
+│    └── main.go
+├── cmd                             # Entry point
+│    └── main.go
+├── config                          # Configurations
+│    └── config.go
+├── entity                          # Entities
+│    └── [ENTITY].go
+├── infrastructure
+│    └── repository
+│        └── [ENTITY]_mysql.go
+└── usecase                         # Bussinse logic
+     └── [ENTITY]
+         ├── inmem.go
+         ├── interface.go
+         └── service.go
+```
+
+
+### [AleksK1NG/Go-Clean-Architecture-REST-API](https://github.com/AleksK1NG/Go-Clean-Architecture-REST-API) ![GitHub Repo stars](https://img.shields.io/github/stars/AleksK1NG/Go-Clean-Architecture-REST-API?style=flat)
+
+```
+.
+├── cmd
+│    └── api
+│        └── main.go
+├── config
+│    └── config.go
+└── internal
+     ├── [BOUNDED CONTEXT]
+     │   ├── delivery
+     │   │   └── http
+     │   │       ├── hanldlers.go
+     │   │       └── routes.go
+     │   ├── repository
+     │   │   ├── pg_repository.go
+     │   │   └── sql_queries.go
+     │   ├── usecase
+     │   │   ├── usecase.go
+     │   ├── delivery.go
+     │   ├── pg_repository.go
+     │   └── usecase.go
+     ├── models
+     │   ├── [ENTITY].go
+     └── server
+         ├── handlers.go
+         └── server.go
 ```
